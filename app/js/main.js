@@ -1,34 +1,93 @@
+const body = document.querySelector('.body')
+const btnBurger = document.querySelector('.burger-btn');
+const headerInner = document.querySelector('.header__inner');
+
+btnBurger.addEventListener('click', function () {
+  this.classList.toggle('burger-btn--active');
+  this.classList.remove('burger-btn--fixed')
+  body.classList.toggle('body--hidden');
+  headerInner.classList.toggle('header__inner--visible')
+})
+
+
+headerInner.addEventListener('scroll', function () {
+  // console.log('aaa');
+})
+
+headerInner.addEventListener('scroll', function () {
+  if (headerInner.classList.contains('header__inner--visible')) {
+    if (this.scrollTop > 5) {
+      btnBurger.classList.add('burger-btn--fixed')
+    } else {
+      btnBurger.classList.remove('burger-btn--fixed')
+    }
+  }
+})
+
 const gallertSwiper = new Swiper(".gallery__swiper", {
   effect: "coverflow",
   grabCursor: true,
-  // centeredSlides: true,
-  slidesPerView: 3,
-  // slidesPerGroup: 2,
-  // centeredSlides: true,
-  spaceBetween: 20,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  slideToClicked: true,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
-    depth: 130,
-    // modifier: 1,
-    // slideShadows: true
+    depth: 25,
+    modifier: 1,
+    slideShadows: true
+  },
+  loop: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      coverflowEffect: {
+        rotate: 30,
+      }
+    },
+    // when window width is >= 480px
+    576: {
+      coverflowEffect: {
+        rotate: 50,
+      }
+    },
+
   }
-  // effect: 'coverflow',
-  // grabCursor: true,
-  // centeredSlides: true,
-  // slidesPerView: 3,
-  // // slidesPerView: 'auto',
-  // coverflow: {
-  //   rotate: 40,
-  //   stretch: 0,
-  //   depth: 10,
-  //   // modifier: 1,
-  //   // slideShadows: true
-  // },
-  // loop: true
 });
 
-var heroesSlider = new Swiper('.heroes__slider', {
+
+
+// const gallertSwiper = new Swiper(".gallery__swiper", {
+//   effect: "coverflow",
+//   grabCursor: true,
+//   // centeredSlides: true,
+//   slidesPerView: 3,
+//   // slidesPerGroup: 2,
+//   // centeredSlides: true,
+//   spaceBetween: 20,
+//   coverflowEffect: {
+//     rotate: 50,
+//     stretch: 0,
+//     depth: 130,
+//     // modifier: 1,
+//     // slideShadows: true
+//   }
+//   // effect: 'coverflow',
+//   // grabCursor: true,
+//   // centeredSlides: true,
+//   // slidesPerView: 3,
+//   // // slidesPerView: 'auto',
+//   // coverflow: {
+//   //   rotate: 40,
+//   //   stretch: 0,
+//   //   depth: 10,
+//   //   // modifier: 1,
+//   //   // slideShadows: true
+//   // },
+//   // loop: true
+// });
+
+const heroesSlider = new Swiper('.heroes__slider', {
   spaceBetween: 1,
   slidesPerView: 5,
   centeredSlides: true,
@@ -36,10 +95,58 @@ var heroesSlider = new Swiper('.heroes__slider', {
   loop: true,
   grabCursor: true,
   // loopAdditionalSlides: 30,
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev"
-  // }
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 'auto',
+      // slidesPerView: 4,
+      spaceBetween: 10
+    },
+    // when window width is >= 480px
+    1024: {
+      slidesPerView: 4,
+      // spaceBetween: 30
+    },
+    // when window width is >= 640px
+    1200: {
+      slidesPerView: 5,
+      // spaceBetween: 40
+    }
+  }
+});
+
+const programIndividSlider = new Swiper('.program-slider', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  // initialSlide: 2,
+  // centeredSlides: true,
+  // roundLengths: true,
+  // loop: true,
+  grabCursor: true,
+  // loopAdditionalSlides: 30,
+  navigation: {
+    nextEl: ".program-slider__btn--next",
+    prevEl: ".program-slider__btn--prev"
+  }
+});
+
+const programSlider = new Swiper('.gallery-slider', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  // initialSlide: 2,
+  // centeredSlides: true,
+  // roundLengths: true,
+  // loop: true,
+  grabCursor: true,
+  // loopAdditionalSlides: 30,
+  navigation: {
+    nextEl: ".gallery-slider__btn--next",
+    prevEl: ".gallery-slider__btn--prev"
+  }
 });
 
 // var mySwiper = new Swiper(".swiper-container", {
@@ -99,3 +206,73 @@ videos.forEach((el) => {
     });
   }
 });
+
+
+//Открытие и закртие модалок(начало)
+// btnModal.forEach(item => {
+//   item.addEventListener('click', function (e) {
+//     const getAttr = e.target.getAttribute('data-modal');
+//     const modal = document.querySelector(`.modal[data-modal="${getAttr}"]`)
+//     modal.classList.add('modal--visible');
+//     body.classList.add('body--hidden');
+//     modal.addEventListener('click', function (e) {
+//       if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
+//         modal.classList.remove('modal--visible');
+//         body.classList.remove('body--hidden');
+//       }
+//     })
+//   })
+// })
+
+const productBtnAll = document.querySelectorAll('.individual-program__more');
+const galleryBtnAll = document.querySelectorAll('.program__btn');
+const modalProduct = document.querySelector('.modal[data-modal="product"]');
+
+productBtnAll.forEach(btn => {
+  btn.addEventListener('click', function () {
+    const parent = btn.closest('.individual-program__card');
+    let dataTarget = +parent.getAttribute('data-target');
+
+    programIndividSlider.slideTo(dataTarget);
+
+    listenModal('product')
+  })
+})
+
+galleryBtnAll.forEach(btn => {
+  btn.addEventListener('click', function () {
+    const parent = btn.closest('.program__card');
+    let dataTarget = +parent.getAttribute('data-target');
+
+    programSlider.slideTo(dataTarget);
+
+    listenModal('gallery')
+  })
+})
+
+function listenModal(nameModal) {
+  disableScroll()
+  const modal = document.querySelector(`.modal[data-modal="${nameModal}"]`);
+  console.log(modal);
+
+  modal.classList.add('modal--visible');
+  body.classList.add('body--hidden');
+  modal.addEventListener('click', function (e) {
+    if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
+      enableScroll()
+      modal.classList.remove('modal--visible');
+      body.classList.remove('body--hidden');
+    }
+  })
+}
+
+
+let disableScroll = function () {
+  let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+  body.style.paddingRight = paddingOffset;
+}
+
+let enableScroll = function () {
+  // body.classList.remove('disable-scroll');
+  body.style.paddingRight = '0px';
+}

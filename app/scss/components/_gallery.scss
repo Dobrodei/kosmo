@@ -1,16 +1,30 @@
 .gallery {
-  padding-right: 15px;
-  padding-left: 15px;
+  // padding-right: 15px;
+  // padding-left: 15px;
   padding-bottom: 50px;
 
   &__title {
     text-align: center;
     margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include tablet {
+      margin-bottom: 45px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__box {
     border-radius: 8px;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
   }
 
@@ -18,30 +32,74 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+
+    @include mobile {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
   }
 
   .swiper-slide {
+    width: 800px;
+    // padding-top: 25px;
+    // padding-bottom: 25px;
     background-position: center;
     background-size: cover;
+
     // width: 470px;
     // height: 400px;
     // transform: scale(0.8);
+    @include tablet {
+      width: 600px;
+    }
+
+    @include small-tablet {
+      width: 400px;
+    }
+
+    @include mobile {
+      width: 250px;
+    }
   }
 
   .swiper-slide-active {
     .gallery__box {
-      &::before {
+
+      &::before,
+      &::after {
         content: "";
         width: 100%;
-        height: 100%;
+        height: 20px;
         position: absolute;
         left: 0;
         right: 0;
-        top: -20px;
-        background-image: url('../images/icons/feedback-decor.svg');
+        top: -25px;
+        background-image: url('../images/icons/decor-feedback.svg');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
+      }
+
+      &::after {
+        top: auto;
+        bottom: -25px;
+        transform: rotate(180deg);
+      }
+
+      @include small-tablet {
+
+        &::before,
+        &::after {
+          height: 10px;
+        }
+
+        &::before {
+          top: -15px;
+        }
+
+        &::after {
+          bottom: -15px;
+        }
       }
     }
 
@@ -53,5 +111,9 @@
   .swiper-slide img {
     display: block;
     width: 100%;
+  }
+
+  @include mobile {
+    padding-top: 30px;
   }
 }

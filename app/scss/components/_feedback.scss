@@ -1,5 +1,17 @@
 .feedback {
   padding-top: 170px;
+
+  @include tablet {
+    padding-top: 100px;
+  }
+
+  @include small-tablet {
+    padding-top: 60px;
+  }
+
+  @include mobile {
+    padding-top: 35px;
+  }
 }
 
 
@@ -19,12 +31,21 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include small-tablet {
+      height: 10px;
+      top: -15px;
+    }
   }
 
   &::after {
     top: auto;
     bottom: -30px;
     transform: rotate(-180deg);
+
+    @include small-tablet {
+      bottom: -15px;
+    }
   }
 
   &__inner {
@@ -39,6 +60,14 @@
 
   &__title {
     margin-bottom: 70px;
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__left {
@@ -47,24 +76,42 @@
     padding: 65px;
     padding-top: 80px;
     padding-right: 20px;
+
     // padding: 65px;
     // padding-top: 80px;
+    @include small-tablet {
+      padding: 20px;
+    }
   }
 
   &__descr {
     margin-bottom: 35px;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__inputs {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__label {
+    width: 100%;
     display: inline-block;
     flex-grow: 1;
     margin-right: 10px;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
   }
 
   &__input {
@@ -80,11 +127,19 @@
       font-size: 16px;
       color: rgba(255, 255, 255, 0.5);
     }
+
+    @include small-tablet {
+      padding: 10px;
+    }
   }
 
   &__btn {
     max-width: 200px;
     width: 100%;
+
+    @include small-tablet {
+      max-width: 150px;
+    }
   }
 
   &__img {
@@ -99,6 +154,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include small-tablet {
+      display: none;
     }
   }
 }

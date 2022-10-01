@@ -12,9 +12,19 @@
   }
 
   &__left {
+    max-width: 230px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+
+    @include tablet {
+      max-width: 150px;
+    }
+
+    @include small-tablet {
+      max-width: initial;
+    }
   }
 
   &__address {
@@ -23,26 +33,70 @@
     color: $color-white;
   }
 
+  &__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @include small-tablet {
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      padding: 20px;
+      padding-top: 100px;
+      background-color: #3F0264;
+      overflow: auto;
+      transform: translateY(-200%);
+      opacity: 0;
+      visibility: hidden;
+      transition: tranforms 0.3s ease, opacity 0.3s ease;
+      z-index: 999;
+
+      &--visible {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   &__right {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
     padding: 10px 20px;
     background-image: url('../images/icons/border-decor.svg');
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include small-tablet {
+      padding: 10px 20px;
+      align-items: center;
+    }
   }
 
   &__phone {
     font-weight: 600;
     font-size: 18px;
     color: $color-white;
+
+    @include small-tablet {
+      font-size: 25px;
+    }
   }
 
   &__descr {
     font-weight: 300;
     font-size: 12px;
     color: $color-white;
+
+    @include small-tablet {
+      font-size: 16px;
+    }
   }
 }
 
@@ -53,19 +107,43 @@
   font-size: 22px;
   color: $color-white;
   text-transform: uppercase;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include small-tablet {
+    font-size: 15px;
+  }
 }
 
 .nav {
-  margin-right: 20px;
+  // margin-right: 20px;
+  margin: 0 auto;
 
   &__list {
     display: flex;
     align-items: center;
+
+    @include small-tablet {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: 50px;
+
+      @include tablet {
+        margin-right: 15px;
+      }
+
+      @include small-tablet {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -74,5 +152,87 @@
     font-weight: 400;
     font-size: 18px;
     color: $color-white;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      padding: 10px 0;
+      font-weight: 600;
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+  }
+
+  @include small-tablet {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+.burger-btn {
+  align-self: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 18px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  transform: top 0.3s, right 0.3s, background-color 0.3s;
+
+  &::before,
+  &::after,
+  &__line {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    background-color: $color-white;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in, width 0.3s ease;
+    position: absolute;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &--fixed {
+    padding: 15px;
+    border-radius: 50%;
+    background-color: gray;
+
+    &::after,
+    &::before {
+      width: 80%;
+    }
+  }
+
+  &--active {
+    &::before {
+      top: auto;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: auto;
+      transform: rotate(-45deg);
+    }
+
+    .burger-btn__line {
+      opacity: 0;
+    }
+  }
+
+  @include small-tablet {
+    display: flex;
   }
 }

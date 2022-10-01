@@ -6,6 +6,10 @@
     text-align: center;
     padding-right: 15px;
     padding-left: 15px;
+
+    @include small-tablet {
+      margin-bottom: 15px;
+    }
   }
 
   &__slider {
@@ -15,6 +19,10 @@
     padding-top: 100px;
     padding-bottom: 20px;
     margin-bottom: 30px;
+
+    @include tablet {
+      padding-top: 50px;
+    }
   }
 
   &__card {
@@ -27,6 +35,11 @@
     opacity: 0.5;
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative;
+
+    @include tablet {
+      width: 100%;
+      height: 170px;
+    }
   }
 
   .swiper-slide-active {
@@ -64,10 +77,44 @@
       height: 100%;
       object-fit: contain;
     }
+
+    @include tablet {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   .centred {
     padding-right: 15px;
     padding-left: 15px;
+  }
+
+  .swiper-slide {
+    width: 180px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin-top: 0;
+  }
+
+  .swiper-button-next {
+    right: 5px;
+  }
+
+  .swiper-button-prev {
+    left: 5px;
+  }
+
+  @include tablet {
+    padding-top: 100px;
+  }
+
+  @include small-tablet {
+    padding-top: 70px;
+  }
+
+  @include mobile {
+    padding-top: 35px;
   }
 }

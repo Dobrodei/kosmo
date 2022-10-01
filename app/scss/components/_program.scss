@@ -2,6 +2,10 @@
 
   &__title {
     margin-bottom: 30px;
+
+    @include small-tablet {
+      margin-bottom: 15px;
+    }
   }
 
   &__list {
@@ -9,13 +13,25 @@
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 430px;
     grid-gap: 30px;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include small-tablet {
+      display: flex;
+      align-items: center;
+      overflow: auto;
+      margin-right: -15px;
+      // grid-template-columns: repeat(2, 1fr);
+      // grid-gap: 15px;
+    }
   }
 
   &__item {
     &:last-child {
       grid-column: span 3;
     }
-
   }
 
   &__box {}
@@ -32,7 +48,7 @@
     overflow: hidden;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     position: relative;
 
     &::before,
@@ -71,7 +87,8 @@
       }
 
       .program__box {
-        top: 0;
+        // top: 10px;
+        top: 3%;
         background-color: #320250;
       }
 
@@ -91,6 +108,11 @@
         display: none;
       }
     }
+
+    @include small-tablet {
+      width: 220px;
+      height: 340px;
+    }
   }
 
   &__box {
@@ -98,21 +120,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    width: 94%;
+    height: 94%;
     padding-top: 65px;
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 8px;
     text-align: center;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+    left: 50%;
+    // right: 0;
     bottom: 0;
+    transform: translateX(-50%);
     background-color: transparent;
     top: 67%;
     transition: top 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
+
+    @include small-tablet {
+      top: 60%;
+    }
   }
 
   &__subtitle {
@@ -124,9 +152,10 @@
     @include line-clamp(20, 1.2, 2)
   }
 
-  &__link {
+  &__btn {
     display: inline-block;
     padding: 10px 30px;
+    color: $color-white;
     background-image: url('../images/icons/border-decor.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;

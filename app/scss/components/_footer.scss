@@ -6,17 +6,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__copy {
     font-weight: 500;
     font-size: 14px;
     margin-right: 20px;
+    text-align: center;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 
   &__link {
     font-weight: 300;
     font-size: 14px;
     text-decoration: underline;
+  }
+
+  @include tablet {
+    padding-bottom: 70px;
+  }
+
+  @include small-tablet {
+    padding-bottom: 30px;
   }
 }
