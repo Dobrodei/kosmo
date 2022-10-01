@@ -1,0 +1,18 @@
+@import 'reset';
+@import 'mixin';
+@import 'fonts';
+@import 'vars';
+@import 'global';
+@import 'libs';
+
+@import './components/header';
+@import './components/hero';
+@import './components/benefits';
+@import './components/gallery';
+@import './components/program';
+@import './components/heroes';
+@import './components/individual-program';
+@import './components/reviews';
+@import './components/feedback';
+@import './components/contacts';
+@import './components/footer';

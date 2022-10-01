@@ -1,0 +1,22 @@
+.footer {
+  padding-top: 50px;
+  padding-bottom: 120px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}

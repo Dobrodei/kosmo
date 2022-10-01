@@ -1,0 +1,7 @@
+// @include font-woff(Roboto-Light, Roboto-Light, 300, normal);
+@include font-woff2("Inter-LightBETA", "Inter-LightBETA", 300, normal);
+@include font-woff2("Inter-Regular", "Inter-Regular", 400, normal);
+@include font-woff2("Inter-Medium", "Inter-Medium", 500, normal);
+@include font-woff2("Inter-SemiBold", "Inter-SemiBold", 600, normal);
+@include font-woff2("toxigenesis bd", "toxigenesis bd", 700, normal);
+// @mixin font-woff($font-family, $url, $weight, $style);

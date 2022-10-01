@@ -1,0 +1,95 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 100px;
+  // padding-bottom: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $color-white;
+  position: relative;
+  z-index: 2;
+
+  &__img {
+    // position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__rocket {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15%;
+  }
+
+  &__images {
+    height: 70%;
+    // position: relative;
+  }
+
+  &__clouds {
+    position: absolute;
+    bottom: -60%;
+    // top: 65%;
+    // bottom: -500px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      object-fit: initial;
+    }
+  }
+
+  &__children {
+    // max-width: 950px;
+    width: 30%;
+    // height: 730px;
+    // z-index: -1;
+    right: 20%;
+    // top: 55%;
+    position: absolute;
+    bottom: 0;
+    // bottom: -500px;
+  }
+
+  &__box {
+    text-align: center;
+    margin-top: 140px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    margin-bottom: 42px;
+    font-family: 'Toxigenesis', sans-serif;
+    font-weight: 700;
+    font-size: 62px;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      background: linear-gradient(180deg, #8DA4EA 28.82%, #FFFFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+
+  &__desr {
+    margin: 0 auto;
+    margin-bottom: 70px;
+    max-width: 460px;
+    font-size: 22px;
+  }
+
+  &__btn {}
+}

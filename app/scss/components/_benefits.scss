@@ -1,0 +1,70 @@
+.benefits {
+  padding-top: 500px;
+  padding-bottom: 140px;
+
+  &__title {
+    max-width: 730px;
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 45px;
+  }
+
+  &__item {
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 2;
+    }
+  }
+
+  &__box {
+    background-image: url('../images/icons/border-benefits.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+  }
+
+  &__card {
+    padding: 20px;
+    padding-top: 130px;
+    background-color: rgba(50, 2, 80, 0.7);
+    border-radius: 8px;
+    background-position: left 20px top 20px;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    color: $color-white;
+
+    &--scenario {
+      background-image: url('../images/icons/scenario.svg')
+    }
+
+    &--travel {
+      background-image: url('../images/icons/travel.svg')
+    }
+
+    &--animator {
+      background-image: url('../images/icons/animator.svg')
+    }
+
+    &--hall {
+      background-image: url('../images/icons/hall.svg')
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
