@@ -88,6 +88,13 @@
     // }
   }
 
+  &--feedback {
+    .modal__close {
+      top: -15%;
+      right: 10px;
+    }
+  }
+
   &--program {
     .modal__content {
       padding-right: 50px;
@@ -96,6 +103,29 @@
 
     .modal__close {
       right: 65px;
+    }
+
+    @include tablet {
+      .modal__content {
+        padding-right: 35px;
+        padding-left: 35px;
+      }
+
+      .modal__close {
+        right: 50px;
+      }
+    }
+
+    @include mobile {
+      .modal__content {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .modal__close {
+        top: 5px;
+        right: 5px;
+      }
     }
   }
 

@@ -1,8 +1,64 @@
 const body = document.querySelector('.body')
-const btnBurger = document.querySelector('.burger-btn');
+const burgerBtn = document.querySelector('.burger-btn');
 const headerInner = document.querySelector('.header__inner');
+const anchorLink = document.querySelectorAll('a[data-scroll]');
+const header = document.querySelector('.header');
+const btnModal = document.querySelectorAll('button[data-modal]');
+const programBtnAll = document.querySelectorAll('.program__btn');
+const programCardAll = document.querySelectorAll('.program-slider__card');
 
-btnBurger.addEventListener('click', function () {
+
+
+console.log(btnModal);
+//Якорные ссылки(начало)
+anchorLink.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = link.getAttribute('href')
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  })
+})
+//Якорные ссылки(конец)
+
+
+
+document.addEventListener('click', function (e) {
+  if (headerInner.classList.contains('header__inner--visible')) {
+    anchorLink.forEach((link => {
+      link.addEventListener('click', function (params) {
+        closeMenu()
+      })
+    }))
+  }
+  // if (e.target != headerMiddle && e.target != burgerBtn) {
+  //   closeMenu()
+  // }
+})
+
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth <= 768) {
+
+  } else {
+
+  }
+  if (window.innerWidth >= 768 && headerInner.classList.contains('header__inner--visible')) {
+    closeMenu()
+  }
+})
+
+function closeMenu() {
+  burgerBtn.classList.remove('burger-btn--active');
+  burgerBtn.classList.remove('burger-btn--fixed');
+  headerInner.classList.remove('header__inner--visible');
+  body.classList.remove('body--hidden')
+}
+
+burgerBtn.addEventListener('click', function () {
+  // closeMenu()
   this.classList.toggle('burger-btn--active');
   this.classList.remove('burger-btn--fixed')
   body.classList.toggle('body--hidden');
@@ -11,15 +67,11 @@ btnBurger.addEventListener('click', function () {
 
 
 headerInner.addEventListener('scroll', function () {
-  // console.log('aaa');
-})
-
-headerInner.addEventListener('scroll', function () {
   if (headerInner.classList.contains('header__inner--visible')) {
     if (this.scrollTop > 5) {
-      btnBurger.classList.add('burger-btn--fixed')
+      burgerBtn.classList.add('burger-btn--fixed')
     } else {
-      btnBurger.classList.remove('burger-btn--fixed')
+      burgerBtn.classList.remove('burger-btn--fixed')
     }
   }
 })
@@ -122,6 +174,7 @@ const heroesSlider = new Swiper('.heroes__slider', {
 const programIndividSlider = new Swiper('.program-slider', {
   spaceBetween: 10,
   slidesPerView: 1,
+  autoHeight: 'auto',
   // initialSlide: 2,
   // centeredSlides: true,
   // roundLengths: true,
@@ -137,6 +190,7 @@ const programIndividSlider = new Swiper('.program-slider', {
 const programSlider = new Swiper('.gallery-slider', {
   spaceBetween: 10,
   slidesPerView: 1,
+  autoHeight: 'auto',
   // initialSlide: 2,
   // centeredSlides: true,
   // roundLengths: true,
@@ -208,21 +262,33 @@ videos.forEach((el) => {
 });
 
 
-//Открытие и закртие модалок(начало)
-// btnModal.forEach(item => {
-//   item.addEventListener('click', function (e) {
-//     const getAttr = e.target.getAttribute('data-modal');
-//     const modal = document.querySelector(`.modal[data-modal="${getAttr}"]`)
-//     modal.classList.add('modal--visible');
-//     body.classList.add('body--hidden');
-//     modal.addEventListener('click', function (e) {
-//       if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
-//         modal.classList.remove('modal--visible');
-//         body.classList.remove('body--hidden');
-//       }
-//     })
-//   })
-// })
+const headerTop = header.offsetTop;
+// const headerHeight = header.getBoundingClientRect().height;
+window.addEventListener('scroll', function () {
+  let scroll = window.pageYOffset;
+  if (scroll >= headerTop) {
+    header.classList.add('header--fixed')
+  } else {
+    header.classList.remove('header--fixed')
+  }
+})
+
+
+// Открытие и закртие модалок(начало)
+btnModal.forEach(item => {
+  item.addEventListener('click', function (e) {
+    const getAttr = e.target.getAttribute('data-modal');
+    const modal = document.querySelector(`.modal[data-modal="${getAttr}"]`)
+    modal.classList.add('modal--visible');
+    body.classList.add('body--hidden');
+    modal.addEventListener('click', function (e) {
+      if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
+        modal.classList.remove('modal--visible');
+        body.classList.remove('body--hidden');
+      }
+    })
+  })
+})
 
 const productBtnAll = document.querySelectorAll('.individual-program__more');
 const galleryBtnAll = document.querySelectorAll('.program__btn');
@@ -253,7 +319,6 @@ galleryBtnAll.forEach(btn => {
 function listenModal(nameModal) {
   disableScroll()
   const modal = document.querySelector(`.modal[data-modal="${nameModal}"]`);
-  console.log(modal);
 
   modal.classList.add('modal--visible');
   body.classList.add('body--hidden');

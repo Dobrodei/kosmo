@@ -10,11 +10,26 @@
     background-color: #320250;
     // box-shadow: 0px 20px 39px rgba(18, 16, 16, 0.61);
     border-radius: 8px;
+
+    @include tablet {
+      padding: 20px;
+      padding-top: 45px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &__left {
     width: 40%;
     margin-right: 20px;
+
+    @include small-tablet {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__img {
@@ -27,16 +42,30 @@
       height: 100%;
       object-fit: fill;
     }
+
+    @include small-tablet {
+      max-width: 300px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
   }
 
   &__content {
     width: 60%;
+
+    @include small-tablet {
+      width: 100%;
+    }
   }
 
   &__top {
     display: flex;
     align-items: flex-end;
     margin-bottom: 25px;
+
+    @include tablet {
+      margin-bottom: 18px;
+    }
   }
 
   &__title {
@@ -45,6 +74,14 @@
     font-size: 32px;
     line-height: 1;
     text-transform: uppercase;
+
+    @include tablet {
+      font-size: 25px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
   }
 
   &__rate {
@@ -76,6 +113,15 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__free {
@@ -86,6 +132,7 @@
 
     &::before {
       content: "";
+      flex-shrink: 0;
       width: 30px;
       height: 30px;
       background-size: 100%;
@@ -105,6 +152,15 @@
         right: -15px;
         top: 0;
       }
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 10px;
+
+        &::after {
+          display: none;
+        }
+      }
     }
 
     &--coffe {
@@ -118,22 +174,36 @@
         background-image: url('../images/icons/tea.svg');
       }
     }
+
+    @include small-tablet {
+      &::before {
+        width: 25px;
+        height: 25px;
+      }
+    }
   }
 
-
-  &__list {}
 
   &__item {
     &:not(:last-child) {
       margin-bottom: 15px;
+
+      @include small-tablet {
+        margin-bottom: 8px;
+      }
     }
   }
 
   &__text {}
 
   &__btn {
-    padding: 30px;
-    width: 70%;
-  }
+    display: block;
+    padding: 15px;
+    width: 90%;
 
+    @include small-tablet {
+      max-width: 270px;
+      margin: 0 auto;
+    }
+  }
 }
