@@ -2,20 +2,6 @@
   padding-top: 150px;
   position: relative;
 
-  &::before {
-    // content: "";
-    // width: 50%;
-    // height: 50%;
-    // background-color: rgba(red, 0.3);
-    // filter: blur(200px);
-    // position: absolute;
-    // // right: 20%;
-    // bottom: -10%;
-    // left: 50%;
-    // // top: 20%;
-    // transform: translateX(-50%);
-  }
-
   &__title {
     text-align: center;
     margin-bottom: 60px;
@@ -35,7 +21,6 @@
     grid-auto-rows: 270px;
     grid-gap: 30px;
 
-    // margin-bottom: 30px;
     @include tablet {
       grid-auto-rows: 230px;
       grid-gap: 15px;

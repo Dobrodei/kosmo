@@ -8,8 +8,6 @@
     right: 40%;
   }
 
-  // padding-bottom: 140px;
-
   &__title {
     max-width: 730px;
     margin-bottom: 60px;
@@ -54,18 +52,6 @@
       }
     }
   }
-
-  // &__box {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   height: 100%;
-  //   background-image: url('../images/icons/border-benefits.svg');
-  //   background-size: 100% 100%;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   padding: 15px;
-  // }
 
   &__card {
     width: 100%;
@@ -138,10 +124,6 @@
   &__text {
     font-weight: 500;
     font-size: 16px;
-
-    @include tablet {
-      @include line-clamp (16, 1.2, 7)
-    }
   }
 
   @include tablet {

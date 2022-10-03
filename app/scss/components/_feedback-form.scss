@@ -1,0 +1,153 @@
+.feedback-form {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    background-image: url('../images/icons/decor-feedback.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include small-tablet {
+      height: 10px;
+      top: -15px;
+    }
+  }
+
+  &::after {
+    top: auto;
+    bottom: -30px;
+    transform: rotate(-180deg);
+
+    @include small-tablet {
+      bottom: -15px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    background-color: #320250;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__title {
+    margin-bottom: 70px;
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__left {
+    max-width: 715px;
+    padding: 65px;
+    padding-top: 80px;
+    padding-right: 20px;
+
+    @include small-tablet {
+      padding: 20px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 35px;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    display: inline-block;
+    flex-grow: 1;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 20px;
+    padding-left: 25px;
+    border: 1px solid rgba(141, 164, 234, 0.5);
+    border-radius: 10px;
+    color: $color-white;
+    background-color: #320250;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-white;
+    }
+
+    @include small-tablet {
+      padding: 10px;
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+}

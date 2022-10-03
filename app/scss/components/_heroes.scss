@@ -2,19 +2,6 @@
   padding-top: 150px;
   position: relative;
 
-  // &::before {
-  //   content: "";
-  //   width: 40px;
-  //   height: 40px;
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0;
-  //   background-image: url('../images/12.svg');
-  //   background-size: 100%;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  // }
-
   &__title {
     margin-bottom: 30px;
     text-align: center;
@@ -49,7 +36,6 @@
     opacity: 0.5;
     transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
     position: relative;
-    // border: 2px solid transparent;
     border-top: 2px solid;
     border-bottom: 2px solid;
     border-color: transparent;

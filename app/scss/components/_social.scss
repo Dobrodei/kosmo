@@ -1,0 +1,45 @@
+.social {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include tablet {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+    transition: border-color 0.3s ease;
+
+    svg {
+      width: 50%;
+      height: 45%;
+      fill: $color-white;
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      border-color: #8DA4EA;
+
+      svg {
+        fill: #8DA4EA;
+      }
+    }
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

@@ -4,7 +4,6 @@
   flex-direction: column;
   height: 100vh;
   padding-top: 100px;
-  // padding-bottom: 50px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13,7 +12,6 @@
   z-index: 2;
 
   &__img {
-    // position: absolute;
 
     img {
       width: 100%;
@@ -31,14 +29,11 @@
 
   &__images {
     height: 70%;
-    // position: relative;
   }
 
   &__clouds {
     position: absolute;
     bottom: -60%;
-    // top: 65%;
-    // bottom: -500px;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -61,17 +56,11 @@
   }
 
   &__children {
-    // max-width: 950px;
-    // width: 30%;
     max-width: 600px;
-    // height: 730px;
-    // z-index: -1;
     right: 15%;
-    // top: 55%;
     position: absolute;
     bottom: 0;
 
-    // bottom: -500px;
     @include large {
       right: 0;
     }
@@ -79,11 +68,6 @@
     @include small-tablet {
       max-width: 420px;
     }
-
-    // @media (max-width: 768px) and (max-height: 900px) {
-    //   height: 100%;
-    //   padding-bottom: 300px;
-    // }
   }
 
   .container {
@@ -94,7 +78,6 @@
     text-align: center;
     padding-top: 150px;
     padding-bottom: 50px;
-    // margin-top: 140px;
     position: relative;
     z-index: 2;
 
@@ -158,8 +141,6 @@
       margin-bottom: 20px;
     }
   }
-
-  &__btn {}
 
   @include small-tablet {
     padding-top: 80px;

@@ -63,7 +63,8 @@ function htmlInclude() {
 
 function scripts() {
   return src([
-      // 'node_modules/jquery/dist/jquery.js',
+      'node_modules/inputmask/dist/inputmask.js',
+      // 'node_modules/aos/dist/aos.js',
       'node_modules/swiper/swiper-bundle.js',
       'app/js/main.js'
     ])

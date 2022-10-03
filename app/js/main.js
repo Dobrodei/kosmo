@@ -6,10 +6,19 @@ const header = document.querySelector('.header');
 const btnModal = document.querySelectorAll('button[data-modal]');
 const programBtnAll = document.querySelectorAll('.program__btn');
 const programCardAll = document.querySelectorAll('.program-slider__card');
+const inputs = document.querySelectorAll('input[type="tel"]');
+//Плагин валидации инпута(начало)
+const im = new Inputmask('+7 (999) 999-99-99');
+im.mask(inputs);
+//Плагин валидации инпута(конец)
 
 
+//Плагин анимациий при скролле(начало)
+// AOS.init({
+//   once: true
+// });
+//Плагин анимациий при скролле(конец)
 
-console.log(btnModal);
 //Якорные ссылки(начало)
 anchorLink.forEach(link => {
   link.addEventListener('click', function (e) {
@@ -24,7 +33,6 @@ anchorLink.forEach(link => {
 //Якорные ссылки(конец)
 
 
-
 document.addEventListener('click', function (e) {
   if (headerInner.classList.contains('header__inner--visible')) {
     anchorLink.forEach((link => {
@@ -33,9 +41,6 @@ document.addEventListener('click', function (e) {
       })
     }))
   }
-  // if (e.target != headerMiddle && e.target != burgerBtn) {
-  //   closeMenu()
-  // }
 })
 
 
@@ -81,6 +86,8 @@ const gallertSwiper = new Swiper(".gallery__swiper", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+  preloadImages: false,
+  lazy: true,
   slideToClicked: true,
   coverflowEffect: {
     rotate: 50,
@@ -108,42 +115,14 @@ const gallertSwiper = new Swiper(".gallery__swiper", {
 });
 
 
-
-// const gallertSwiper = new Swiper(".gallery__swiper", {
-//   effect: "coverflow",
-//   grabCursor: true,
-//   // centeredSlides: true,
-//   slidesPerView: 3,
-//   // slidesPerGroup: 2,
-//   // centeredSlides: true,
-//   spaceBetween: 20,
-//   coverflowEffect: {
-//     rotate: 50,
-//     stretch: 0,
-//     depth: 130,
-//     // modifier: 1,
-//     // slideShadows: true
-//   }
-//   // effect: 'coverflow',
-//   // grabCursor: true,
-//   // centeredSlides: true,
-//   // slidesPerView: 3,
-//   // // slidesPerView: 'auto',
-//   // coverflow: {
-//   //   rotate: 40,
-//   //   stretch: 0,
-//   //   depth: 10,
-//   //   // modifier: 1,
-//   //   // slideShadows: true
-//   // },
-//   // loop: true
-// });
-
 const heroesSlider = new Swiper('.heroes__slider', {
   spaceBetween: 1,
   slidesPerView: 5,
   centeredSlides: true,
-  roundLengths: true,
+  // roundLengths: true,
+  watchSlidesProgress: true,
+  preloadImages: false,
+  lazy: true,
   loop: true,
   grabCursor: true,
   // loopAdditionalSlides: 30,
@@ -152,21 +131,15 @@ const heroesSlider = new Swiper('.heroes__slider', {
     prevEl: ".swiper-button-prev"
   },
   breakpoints: {
-    // when window width is >= 320px
     320: {
       slidesPerView: 'auto',
-      // slidesPerView: 4,
       spaceBetween: 10
     },
-    // when window width is >= 480px
     1024: {
       slidesPerView: 4,
-      // spaceBetween: 30
     },
-    // when window width is >= 640px
     1200: {
       slidesPerView: 5,
-      // spaceBetween: 40
     }
   }
 });
@@ -175,12 +148,7 @@ const programIndividSlider = new Swiper('.program-slider', {
   spaceBetween: 10,
   slidesPerView: 1,
   autoHeight: 'auto',
-  // initialSlide: 2,
-  // centeredSlides: true,
-  // roundLengths: true,
-  // loop: true,
   grabCursor: true,
-  // loopAdditionalSlides: 30,
   navigation: {
     nextEl: ".program-slider__btn--next",
     prevEl: ".program-slider__btn--prev"
@@ -191,30 +159,13 @@ const programSlider = new Swiper('.gallery-slider', {
   spaceBetween: 10,
   slidesPerView: 1,
   autoHeight: 'auto',
-  // initialSlide: 2,
-  // centeredSlides: true,
-  // roundLengths: true,
-  // loop: true,
   grabCursor: true,
-  // loopAdditionalSlides: 30,
   navigation: {
     nextEl: ".gallery-slider__btn--next",
     prevEl: ".gallery-slider__btn--prev"
   }
 });
 
-// var mySwiper = new Swiper(".swiper-container", {
-//   // spaceBetween: 1,
-//   // slidesPerView: 3,
-//   // centeredSlides: true,
-//   // roundLengths: true,
-//   // loop: true,
-//   // loopAdditionalSlides: 30,
-//   // navigation: {
-//   //   nextEl: ".swiper-button-next",
-//   //   prevEl: ".swiper-button-prev"
-//   // }
-// });
 
 const videos = document.querySelectorAll('.reviews__box[data-video]')
 
@@ -263,7 +214,6 @@ videos.forEach((el) => {
 
 
 const headerTop = header.offsetTop;
-// const headerHeight = header.getBoundingClientRect().height;
 window.addEventListener('scroll', function () {
   let scroll = window.pageYOffset;
   if (scroll >= headerTop) {
@@ -277,12 +227,15 @@ window.addEventListener('scroll', function () {
 // Открытие и закртие модалок(начало)
 btnModal.forEach(item => {
   item.addEventListener('click', function (e) {
+    disableScroll()
+    e.preventDefault()
     const getAttr = e.target.getAttribute('data-modal');
     const modal = document.querySelector(`.modal[data-modal="${getAttr}"]`)
     modal.classList.add('modal--visible');
     body.classList.add('body--hidden');
     modal.addEventListener('click', function (e) {
       if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
+        enableScroll()
         modal.classList.remove('modal--visible');
         body.classList.remove('body--hidden');
       }

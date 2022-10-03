@@ -9,11 +9,13 @@
   "author": "Kirill Sturlis",
   "license": "ISC",
   "devDependencies": {
+    "aos": "^2.3.4",
     "browser-sync": "^2.27.5",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
     "gulp-svg-sprite": "^1.5.0",
+    "inputmask": "^5.0.7",
     "jquery": "^3.6.0",
     "sass": "^1.42.1",
     "swiper": "^8.4.2"

@@ -1,5 +1,4 @@
 .program-slider {
-
   &__card {
     display: flex;
     align-items: flex-start;
@@ -8,7 +7,6 @@
     padding-top: 55px;
     padding-bottom: 80px;
     background-color: #320250;
-    // box-shadow: 0px 20px 39px rgba(18, 16, 16, 0.61);
     border-radius: 8px;
 
     @include tablet {
@@ -183,7 +181,6 @@
     }
   }
 
-
   &__item {
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -193,8 +190,6 @@
       }
     }
   }
-
-  &__text {}
 
   &__btn {
     display: block;
