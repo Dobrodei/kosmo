@@ -124,6 +124,26 @@
   &__text {
     font-weight: 500;
     font-size: 16px;
+    position: relative;
+    transition: max-height 0.3s ease;
+
+    @include small-tablet {
+      &--hidden {
+        max-height: 110px;
+        overflow: hidden;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__more {
+    display: none;
+    color: #8DA4EA;
+
+    @include small-tablet {
+      display: inline-block;
+    }
   }
 
   @include tablet {

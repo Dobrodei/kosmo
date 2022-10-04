@@ -11,18 +11,29 @@
             <p class="feedback-form__descr">
               Просто оставтье заявку. Спланируем программу и ответим на все вопросы
             </p>
-            <div class="feedback-form__inputs">
-              <label class="feedback-form__label">
-                <span class="sr-only">
-                  Введите ваше имя
+            <div class="feedback-form__box">
+              <div class="feedback-form__inputs">
+                <label class="feedback-form__label">
+                  <span class="sr-only">
+                    Введите ваше имя
+                  </span>
+                  <input class="feedback-form__input" type="text" placeholder="Ваше имя">
+                </label>
+                <label class="feedback-form__label">
+                  <span class="sr-only">
+                    Введите ваш мобильный телефое
+                  </span>
+                  <input class="feedback-form__input" type="tel" placeholder="Номер телефона">
+                </label>
+              </div>
+              <label class="checkbox" for="checkbox-data">
+                <span class="checkbox__box">
+                  <input class="checkbox__input" id="checkbox-data" type="checkbox" checked>
+                  <span class="checkbox__check"></span>
                 </span>
-                <input class="feedback-form__input" type="text" placeholder="Ваше имя">
-              </label>
-              <label class="feedback-form__label">
-                <span class="sr-only">
-                  Введите ваш мобильный телефое
+                <span class="checkbox__text">
+                  Согласие на <a class="feedback-form__link" href="policy.html">обработку персональных данных.</a>
                 </span>
-                <input class="feedback-form__input" type="tel" placeholder="Номер телефона">
               </label>
               <button class="feedback-form__btn btn" type="submit">
                 Отправить
@@ -30,7 +41,7 @@
             </div>
           </div>
           <div class="feedback-form__img">
-            <img src="./images/feedback-img.png" aria-hidden="true" alt="" width="510" height="680">
+            <img src="./images/feedback-img.png" loading="lazy" aria-hidden="true" alt="" width="510" height="680">
           </div>
         </div>
       </form>

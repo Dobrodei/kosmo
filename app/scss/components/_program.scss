@@ -172,10 +172,13 @@
     display: inline-block;
     padding: 10px 30px;
     color: $color-white;
-    background-image: url('../images/icons/border-decor.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    border: 2px solid #8DA4EA;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: $color-white;
+    }
   }
 
   @include tablet {

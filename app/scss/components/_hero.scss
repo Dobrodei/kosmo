@@ -22,9 +22,13 @@
 
   &__rocket {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 15%;
+    left: -4%;
+    top: 4%;
+    width: 20%;
+
+    @include mobile {
+      width: 27%;
+    }
   }
 
   &__images {
@@ -142,6 +146,31 @@
     }
   }
 
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: $color-white;
+      margin-right: 10px;
+
+      @include mobile {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &:hover {
+      svg {
+        fill: #8DA4EA;
+      }
+    }
+  }
+
   @include small-tablet {
     padding-top: 80px;
   }
@@ -155,13 +184,14 @@
     }
   }
 
-  @media (min-width: 1024px) and (max-height: 1024px) {
+  //max-height:1024
+  @media (min-width: 768px) and (min-height: 700px) {
     height: 100%;
     padding-bottom: 360px;
   }
 
   @media (max-width: 768px) and (min-height: 700px) {
     height: 100%;
-    padding-bottom: 300px;
+    padding-bottom: 270px;
   }
 }

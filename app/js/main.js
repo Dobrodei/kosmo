@@ -6,28 +6,91 @@ const header = document.querySelector('.header');
 const btnModal = document.querySelectorAll('button[data-modal]');
 const programBtnAll = document.querySelectorAll('.program__btn');
 const programCardAll = document.querySelectorAll('.program-slider__card');
-const inputs = document.querySelectorAll('input[type="tel"]');
+const inputsNum = document.querySelectorAll('input[type="tel"]');
+const inputsText = document.querySelectorAll('input[type="text"]');
+
+
+
+const moreInfoBtn = document.querySelectorAll('.benefits__more');
+
+//Открытие и закрытие текста читать далее(начало)
+moreInfoBtn.forEach(btn => {
+
+  btn.addEventListener('click', function () {
+    const moreInfoText = this.previousElementSibling;
+
+    if (moreInfoText.style.maxHeight) {
+      btn.innerHTML = 'Подробнее';
+      moreInfoText.style.maxHeight = null;
+    } else {
+      btn.innerHTML = 'Скрыть';
+      moreInfoText.style.maxHeight = moreInfoText.scrollHeight + "px";
+    }
+
+  })
+})
+//Открытие и закрытие текста читать далее(конец)
+
+
 //Плагин валидации инпута(начало)
 const im = new Inputmask('+7 (999) 999-99-99');
-im.mask(inputs);
+im.mask(inputsNum);
 //Плагин валидации инпута(конец)
 
 
-//Плагин анимациий при скролле(начало)
-// AOS.init({
-//   once: true
-// });
-//Плагин анимациий при скролле(конец)
+inputsText.forEach(input => {
+  input.addEventListener('input', function () {
+    let str = this.value;
+    const value = str.match(/[A-Za-zА-Яа-яЁё]+/g)
+    if (value) {
+      console.log('aaa');
+      input.value = value.join('')
+    } else {
+      input.value = '';
+    }
+
+  })
+})
+
+
+const showMore = document.querySelector('.reviews__btn');
+const productsLength = document.querySelectorAll('.reviews__item').length;
+let items = 3;
+
+showMore.addEventListener('click', () => {
+  items += 3;
+  const array = Array.from(document.querySelector('.reviews__list').children);
+  const visItems = array.slice(0, items);
+
+  visItems.forEach(el => el.classList.add('is-visible'));
+
+  if (visItems.length === productsLength) {
+    showMore.style.display = 'none';
+  }
+});
+
+
+// Плагин анимациий при скролле(начало)
+AOS.init({
+  once: true
+});
+// Плагин анимациий при скролле(конец)
 
 //Якорные ссылки(начало)
 anchorLink.forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
-    const id = link.getAttribute('href')
-    document.querySelector(id).scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
+    const id = link.getAttribute('href');
+    const block = document.querySelector(id);
+    const blockPosition = block.getBoundingClientRect().top;
+    const headerHeight = header.offsetHeight;
+
+    let elemPosition = blockPosition - headerHeight;
+
+    window.scrollBy({
+      top: elemPosition,
+      behavior: "smooth"
+    });
   })
 })
 //Якорные ссылки(конец)
@@ -80,91 +143,6 @@ headerInner.addEventListener('scroll', function () {
     }
   }
 })
-
-const gallertSwiper = new Swiper(".gallery__swiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  preloadImages: false,
-  lazy: true,
-  slideToClicked: true,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 25,
-    modifier: 1,
-    slideShadows: true
-  },
-  loop: true,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      coverflowEffect: {
-        rotate: 30,
-      }
-    },
-    // when window width is >= 480px
-    576: {
-      coverflowEffect: {
-        rotate: 50,
-      }
-    },
-
-  }
-});
-
-
-const heroesSlider = new Swiper('.heroes__slider', {
-  spaceBetween: 1,
-  slidesPerView: 5,
-  centeredSlides: true,
-  // roundLengths: true,
-  watchSlidesProgress: true,
-  preloadImages: false,
-  lazy: true,
-  loop: true,
-  grabCursor: true,
-  // loopAdditionalSlides: 30,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 'auto',
-      spaceBetween: 10
-    },
-    1024: {
-      slidesPerView: 4,
-    },
-    1200: {
-      slidesPerView: 5,
-    }
-  }
-});
-
-const programIndividSlider = new Swiper('.program-slider', {
-  spaceBetween: 10,
-  slidesPerView: 1,
-  autoHeight: 'auto',
-  grabCursor: true,
-  navigation: {
-    nextEl: ".program-slider__btn--next",
-    prevEl: ".program-slider__btn--prev"
-  }
-});
-
-const programSlider = new Swiper('.gallery-slider', {
-  spaceBetween: 10,
-  slidesPerView: 1,
-  autoHeight: 'auto',
-  grabCursor: true,
-  navigation: {
-    nextEl: ".gallery-slider__btn--next",
-    prevEl: ".gallery-slider__btn--prev"
-  }
-});
 
 
 const videos = document.querySelectorAll('.reviews__box[data-video]')
@@ -229,17 +207,16 @@ btnModal.forEach(item => {
   item.addEventListener('click', function (e) {
     disableScroll()
     e.preventDefault()
+
+    const modalActive = document.querySelector('.modal--visible');
+
+    if (modalActive) {
+      modalActive.classList.remove('modal--visible')
+      body.classList.remove('body--hidden')
+    }
+
     const getAttr = e.target.getAttribute('data-modal');
-    const modal = document.querySelector(`.modal[data-modal="${getAttr}"]`)
-    modal.classList.add('modal--visible');
-    body.classList.add('body--hidden');
-    modal.addEventListener('click', function (e) {
-      if (e.target.classList == 'modal__close' || e.target.classList[0] == 'modal') {
-        enableScroll()
-        modal.classList.remove('modal--visible');
-        body.classList.remove('body--hidden');
-      }
-    })
+    listenModal(getAttr)
   })
 })
 
@@ -284,13 +261,93 @@ function listenModal(nameModal) {
   })
 }
 
-
 let disableScroll = function () {
   let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
   body.style.paddingRight = paddingOffset;
 }
 
 let enableScroll = function () {
-  // body.classList.remove('disable-scroll');
   body.style.paddingRight = '0px';
 }
+
+const gallertSwiper = new Swiper(".gallery__swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  preloadImages: false,
+  lazy: true,
+  slideToClicked: true,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 25,
+    modifier: 1,
+    slideShadows: true
+  },
+  loop: true,
+  breakpoints: {
+    320: {
+      coverflowEffect: {
+        rotate: 30,
+      }
+    },
+    576: {
+      coverflowEffect: {
+        rotate: 50,
+      }
+    },
+  }
+});
+
+
+const heroesSlider = new Swiper('.heroes__slider', {
+  spaceBetween: 1,
+  slidesPerView: 5,
+  centeredSlides: true,
+  // roundLengths: true,
+  watchSlidesProgress: true,
+  preloadImages: false,
+  lazy: true,
+  loop: true,
+  grabCursor: true,
+  // loopAdditionalSlides: 30,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 'auto',
+      spaceBetween: 10
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+    1200: {
+      slidesPerView: 5,
+    }
+  }
+});
+
+const programIndividSlider = new Swiper('.program-slider', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  autoHeight: 'auto',
+  grabCursor: true,
+  navigation: {
+    nextEl: ".program-slider__btn--next",
+    prevEl: ".program-slider__btn--prev"
+  }
+});
+
+const programSlider = new Swiper('.gallery-slider', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  autoHeight: 'auto',
+  grabCursor: true,
+  navigation: {
+    nextEl: ".gallery-slider__btn--next",
+    prevEl: ".gallery-slider__btn--prev"
+  }
+});

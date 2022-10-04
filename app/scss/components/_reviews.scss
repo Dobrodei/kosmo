@@ -1,6 +1,7 @@
 .reviews {
   padding-top: 150px;
   position: relative;
+  overflow: hidden;
 
   &__title {
     text-align: center;
@@ -42,6 +43,10 @@
       @include mobile {
         display: none;
       }
+    }
+
+    &.is-visible {
+      display: block;
     }
   }
 

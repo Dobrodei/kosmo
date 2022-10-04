@@ -129,4 +129,9 @@
       transform: scale(1);
     }
   }
+
+  @media (orientation: landscape) {
+    padding-top: 55px;
+    padding-bottom: 30px;
+  }
 }

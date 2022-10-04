@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Планетарий с технологией FullDome - кинотеатра и углом обзора в 360°</title>
+  <link rel="preload" as="font" href="./fonts/Inter-Light.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Inter-Medium.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="./fonts/toxigenesis.woff2" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+  <header class="header">
+  <div class="container header__container">
+    <div class="header__left">
+      <a class="header__logo logo" href="index.html">
+        Планетарий
+      </a>
+      <span class="header__address">
+        г. Воронеж, ул. Генерала Лизюкова, д. 2
+      </span>
+    </div>
+    <div class="header__inner">
+      <nav class="nav" title="Навигация по сайту">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#program-section" data-scroll>
+              Программы
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#gallery-section" data-scroll>
+              Галерея
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#reviews-section" data-scroll>
+              Отзывы
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contacts-section" data-scroll>
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <a class="header__phone" href="tel:+89525422882">
+          8 (952) 542 28-82
+        </a>
+        <span class="header__descr">
+          Работаем с 10:00 до 22:00
+        </span>
+      </div>
+    </div>
+    <button class="burger-btn" aria-label="Кнопка открытия меню">
+      <span class="burger-btn__line"></span>
+    </button>
+  </div>
+</header>
+  <main class="main">
+    <section class="hero" style="background-image: url('./images/hero-bg.jpg')">
+  <div class="hero__rocket hero__img">
+    <img src="./images/rocket.png" loading="lazy" aria-hidden="true" alt="" width="300" height="475" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+  </div>
+  <div class="container">
+    <div class="hero__box" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="700">
+      <h1 class="hero__title">
+        Детские праздники
+        <span>
+          В fulldome кинотеатре
+        </span>
+      </h1>
+      <p class="hero__desr">
+        Полное погружение в другую реальность!
+        Эффект присутствия с обзором в 360°
+      </p>
+      <button class="hero__btn btn" data-modal="feedback">
+        <svg>
+          <use xlink:href="images/sprite.svg#accept"></use>
+        </svg>
+        В путешесвтие
+      </button>
+    </div>
+  </div>
+  <div class="hero__clouds hero__img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-offset="50">
+    <img src="./images/clouds.png" loading="lazy" aria-hidden="true" alt="" width="1920" height="1300">
+  </div>
+  <div class="hero__children hero__img" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="50">
+    <img src="./images/children.png" loading="lazy" aria-hidden="true" alt="" width="600" height="440">
+  </div>
+</section>
+    <section class="benefits decor">
+  <div class="container">
+    <h2 class="benefits__title title">
+      отмечайте день рождения ярко, весело и незабываемо
+    </h2>
+    <ul class="benefits__list">
+      <li class="benefits__item">
+        <div class="benefits__card benefits__card--scenario" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="100" data-aos-duration="700">
+          <h3 class="benefits__subtitle">
+            Индивидуальный сценарий
+          </h3>
+          <p class="benefits__text">
+            Разрабатываем сценарий с учетом интересов ребенка и пожеланий родителя. Пишем сюжет, подбираем аниматоров, готовим программу. Все хлопоты по организацииберем на себя
+          </p>
+        </div>
+      </li>
+      <li class="benefits__item">
+        <div class="benefits__card benefits__card--travel" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="200" data-aos-duration="800">
+          <h3 class="benefits__subtitle">
+            Путешествия за пределы Земли
+          </h3>
+          <p class="benefits__text benefits__text--hidden">
+            Дети занимают места в нашем космическом зале, гаснет свет и, благодаря многопроектной системе, купол мгновенно превращается в загадочное звёздное небо. Юные космонавты познакомятся с созвездиями, в деталях рассмотрят захватывающие галактики и «слетают» к неизведанным мирам. Всего за 30 минут ваши дети получат важные знания и уникальное ощущение полёта, которое надолго наполнит их сердца незабываемым чувством легкости!
+          </p>
+          <button class="benefits__more" aria-label="Кнопка развертывания текста">
+            Подробнее
+          </button>
+        </div>
+      </li>
+      <li class="benefits__item">
+        <div class="benefits__card benefits__card--animator" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="300" data-aos-duration="900">
+          <h3 class="benefits__subtitle">
+            Фантастический аниматор с активной игровой программой
+          </h3>
+          <p class="benefits__text benefits__text--hidden">
+            После космического шоу детей ждёт встреча с гостем с другого края вселенной! Опытные аниматоры с педагогическим образованием помогут ребятам спасти Землю, облететь весь космос и даже захватить другую планету, уделяя необходимое внимание каждому члену экипажа. Благодаря ненавязчивой «команде образования» и активной игровой программе «Космодрома» ваш ребёнок проявит свои лидерские качества, откроет в себе необходимую тягу к знаниям и повеселится так, как никогда прежде – не каждый день спасаешь галактику!
+          </p>
+          <button class="benefits__more" aria-label="Кнопка развертывания текста">
+            Подробнее
+          </button>
+        </div>
+      </li>
+      <li class="benefits__item">
+        <div class="benefits__card benefits__card--hall" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="400" data-aos-duration="1000">
+          <h3 class="benefits__subtitle">
+            Торжественный зал в 300 кв.м
+          </h3>
+          <p class="benefits__text">
+            Вместительный зал с мягкими посадочными местами. Антураж готовим сами! С нас столы, стулья и холодильник. Вы можете разместить самые большие торты, сладости и напитки - всё поместиться
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div class="centred">
+      <button class="benefits__btn btn" data-modal="feedback">
+        Узнать свободные даты
+      </button>
+    </div>
+  </div>
+</section>
+    <section class="gallery decor" id="gallery-section">
+  <h2 class="gallery__title title">
+    истории бомбезных праздников
+  </h2>
+  <div class="swiper gallery__swiper" data-aos="fade-up" data-aos-duration="700">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="gallery__box">
+          <img class="swiper-lazy" src="./images/gallery/1.jpg" loading="lazy" alt="Фото из праздников" width="800" height="530">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="gallery__box">
+          <img class="swiper-lazy" src="./images/gallery/2.jpg" loading="lazy" alt="Фото из праздников" width="800" height="530">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="gallery__box">
+          <img class="swiper-lazy" src="./images/gallery/3.jpg" loading="lazy" alt="Фото из праздников" width="800" height="530">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="gallery__box">
+          <img class="swiper-lazy" src="./images/gallery/4.jpg" loading="lazy" alt="Фото из праздников" width="800" height="530">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="gallery__box">
+          <img class="swiper-lazy" src="./images/gallery/5.jpg" loading="lazy" alt="Фото из праздников" width="800" height="530">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="program decor" id="program-section">
+  <div class="container">
+    <h2 class="program__title title">
+      Зрелишные шоу программы
+    </h2>
+    <ul class="program__list">
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/0.jpg')" data-target="0" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="200" data-aos-duration="700">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Невероятные приключения Дракоши Вудика
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/2.jpg')" data-target="1" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="300" data-aos-duration="800">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Удивительная планета
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/5.jpg')" data-target="2" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="400" data-aos-duration="900">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Сокровища Вселенной
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/6.jpg')" data-target="3" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="500" data-aos-duration="1000">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Угроза из космоса
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/1.jpg')" data-target="4">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Розетта
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/8.jpg')" data-target="5" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="600" data-aos-duration="1100">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Созвездия
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/7.jpg')" data-target="6" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="700" data-aos-duration="1200">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Возвращение на Луну навсегда
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/4.jpg')" data-target="7" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="800" data-aos-duration="1300">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Удивительное путешесвтие по солнечной системе
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card" style="background-image: url('./images/program/9.jpg')" data-target="8" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="900" data-aos-duration="1400">
+          <div class="program__box">
+            <h3 class="program__subtitle">
+              Астрономия
+            </h3>
+            <button class="program__btn">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="program__item">
+        <div class="program__card program__card--banner" style="background-image: url('./images/program/10.jpg')" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="1000" data-aos-duration="1500">
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+    <section class="heroes">
+  <h2 class="heroes__title title">
+    зовем любимых персонажей
+  </h2>
+  <div class="swiper heroes__slider slider" data-aos="fade-up" data-aos-offset="50" data-aos-delay="200" data-aos-duration="700">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/1.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/2.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/3.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/4.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/5.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/6.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="heroes__card">
+          <div class="heroes__img">
+            <img class="swiper-lazy" src="./images/heroes/7.png" loading="lazy" alt="Фото героя" width="270" height="270">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="centred">
+    <button class="heroes__btn btn" data-modal="feedback">
+      Подобрать персонажа
+    </button>
+  </div>
+</section>
+    <section class="individual-program decor">
+  <div class="container">
+    <h2 class="individual-program__title title">
+      индивидуальная программа для именинника
+    </h2>
+    <ul class="individual-program__list">
+      <li class="individual-program__item">
+        <article class="individual-program__card" data-target="0" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="300" data-aos-duration="700">
+          <span class="individual-program__free individual-program__free--coffee">
+            <span class="sr-only">
+              Бесплатное кофе
+            </span>
+          </span>
+          <div class="individual-program__img individual-program__img--east">
+            <img src="./images/individual-program/1.png" loading="lazy" alt="Фото индивидуальной программы Восток 1" width="293" height="268">
+          </div>
+          <div class="individual-program__box">
+            <h3 class="individual-program__subtitle">
+              Восток 1
+            </h3>
+            <p class="individual-program__descr">
+              Состав экипажа: 8 человек
+            </p>
+            <p class="individual-program__age">
+              до 4 детей | до 4 взрослых
+            </p>
+          </div>
+          <button class="individual-program__more" aria-label="Открытия модального окна с детальным описанием"></button>
+        </article>
+      </li>
+      <li class="individual-program__item">
+        <article class="individual-program__card" data-target="1" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="400" data-aos-duration="800">
+          <span class="individual-program__free individual-program__free--coffee">
+            <span class="sr-only">
+              Бесплатное кофе
+            </span>
+          </span>
+          <div class="individual-program__img individual-program__img--union">
+            <img src="./images/individual-program/2.png" loading="lazy" alt="Фото индивидуальной программы Союз 2" width="246" height="294">
+          </div>
+          <div class="individual-program__box">
+            <h3 class="individual-program__subtitle">
+              Союз 2
+            </h3>
+            <p class="individual-program__descr">
+              Состав экипажа: 15 человек
+            </p>
+            <p class="individual-program__age">
+              до 7 детей | до 8 взрослых
+            </p>
+          </div>
+          <button class="individual-program__more" aria-label="Открытия модального окна с детальным описанием"></button>
+        </article>
+      </li>
+      <li class="individual-program__item">
+        <article class="individual-program__card" data-target="2" data-aos="zoom-in" data-aos-offset="50" data-aos-delay="500" data-aos-duration="900">
+          <span class="individual-program__free individual-program__free--coffee">
+            <span class="sr-only">
+              Бесплатное кофе
+            </span>
+          </span>
+          <span class="individual-program__free individual-program__free--tea">
+            <span class="sr-only">
+              Бесплатное чай
+            </span>
+          </span>
+          <div class="individual-program__img individual-program__img--mks">
+            <img src="./images/individual-program/3.png" loading="lazy" alt="Фото индивидуальной программы МКС 3" width="272" height="288">
+          </div>
+          <div class="individual-program__box">
+            <h3 class="individual-program__subtitle">
+              МКС 3
+            </h3>
+            <p class="individual-program__descr">
+              Состав экипажа: 25 человек
+            </p>
+            <p class="individual-program__age">
+              до 10 детей | до 15 взрослых
+            </p>
+          </div>
+          <button class="individual-program__more" aria-label="Открытия модального окна с детальным описанием"></button>
+        </article>
+      </li>
+    </ul>
+    <div class="centred">
+      <button class="individual-program__btn btn" data-modal="feedback">
+        Узнать свободные даты
+      </button>
+    </div>
+  </div>
+</section>
+    <section class="reviews" id="reviews-section">
+  <div class="container">
+    <h2 class="reviews__title title">
+      Что о нас говорят
+    </h2>
+    <ul class="reviews__list">
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=7_sGbSAoJXA" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="300" data-aos-duration="700">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Ходили на программу дракона и продолжение текста
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=2CLNIwwEuGI" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="400" data-aos-duration="800">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Ходили на программу дракона Вудика
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=bgdZDVICBow" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="500" data-aos-duration="900">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Долго думали, но решили сходить
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=kRPdwyxYYz4" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="600" data-aos-duration="1000">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Ни разу не пожалели после похода в этот планитарий
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=LDCK_h4pTas" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="700" data-aos-duration="1100">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Ходили на программу дракона и продолжение текста
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__box" data-video="https://www.youtube.com/watch?v=vZDy5B7ETeM" data-aos="zoom-in-left" data-aos-offset="50" data-aos-delay="800" data-aos-duration="1200">
+          <div class="reviews__img">
+            <img class="reviews__img" loading="lazy" src="video-bg.jpg" alt="Видео отзыв" width="386" height="270">
+          </div>
+          <p class="reviews__text">
+            Ребенок хочет еще, придем
+          </p>
+          <button class="reviews__play" aria-label="Кнопка запуска видео">
+            <svg>
+              <use xlink:href="images/sprite.svg#play"></use>
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div class="centred">
+      <button class="reviews__btn btn">
+        Показать еще
+      </button>
+    </div>
+  </div>
+</section>
+    <section class="feedback decor" data-aos="fade-up" data-aos-offset="50" data-aos-delay="300" data-aos-duration="700">
+  <div class="container">
+    <h2 class="sr-only">
+      Форма обратной связи
+    </h2>
+    <form class="feedback-form" action="#">
+      <div class="feedback-form__inner">
+        <div class="feedback-form__left">
+          <h3 class="feedback-form__title title">
+            Сделаем ваш праздник незабываемым! Вы готовы к путешествию?
+          </h3>
+          <p class="feedback-form__descr">
+            Просто оставтье заявку. Спланируем программу и ответим на все вопросы
+          </p>
+          <div class="feedback-form__box">
+            <div class="feedback-form__inputs">
+              <label class="feedback-form__label">
+                <span class="sr-only">
+                  Введите ваше имя
+                </span>
+                <input class="feedback-form__input" type="text" placeholder="Ваше имя" pattern="\D [^0-9]">
+              </label>
+              <label class="feedback-form__label">
+                <span class="sr-only">
+                  Введите ваш мобильный телефое
+                </span>
+                <input class="feedback-form__input" type="tel" placeholder="Номер телефона">
+              </label>
+            </div>
+            <label class="checkbox" for="checkbox-data">
+              <span class="checkbox__box">
+                <input class="checkbox__input" id="checkbox-data" type="checkbox" checked>
+                <span class="checkbox__check"></span>
+              </span>
+              <span class="checkbox__text">
+                Согласие на <a class="feedback-form__link" href="policy.html">обработку персональных данных.</a>
+              </span>
+            </label>
+            <button class="feedback-form__btn btn" type="submit">
+              Отправить
+            </button>
+          </div>
+        </div>
+        <div class="feedback-form__img">
+          <img src="./images/feedback-img.png" loading="lazy" aria-hidden="true" alt="" width="460" height="490">
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+    <section class="contacts" id="contacts-section">
+  <div class="container">
+    <div class="contacts__top">
+      <h2 class="contacts__title title">
+        Контакты
+      </h2>
+      <a class="contacts__phone" href="tel:+89525422882">
+        8 (952) 542 28-82
+      </a>
+    </div>
+    <div id="map" style="background-image: url('./images/map.jpg')" data-aos="fade-up" data-aos-offset="50" data-aos-duration="700">
+    </div>
+    <div class="contacts__inner">
+      <div class="contacts__info">
+        <address class="contacts__address">
+          г.Воронеж, ул. Генерала Лизюкова, д. 2
+        </address>
+        <p class="contacts__time">
+          Время работы с 10:00 до 22:00. Ежедневно
+        </p>
+      </div>
+      <ul class="social" title="Социальные сети">
+        <li class="social__item">
+          <a class="social__link social__link--fb" href="https://vk.com/kosmodrom_vrn" target="_blank" aria-label="Наша страничка в Вконтакте">
+            <svg>
+              <use xlink:href="images/sprite.svg#vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--fb" href="#" target="_blank" aria-label="Наша страничка в Ватсапе">
+            <svg>
+              <use xlink:href="images/sprite.svg#whatsap"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--fb" href="#" target="_blank" aria-label="Наша группа в телеграмм">
+            <svg>
+              <use xlink:href="images/sprite.svg#telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--fb" href="#" target="_blank" aria-label="Наша почта">
+            <svg>
+              <use xlink:href="images/sprite.svg#mail"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="footer">
+  <div class="container footer__container">
+    <p class="footer__copy">
+      © kosmoprazdnik 2022. Все права защищены
+    </p>
+    <a class="footer__link" href="policy.html">
+      Политика конфиденциальности
+    </a>
+  </div>
+</footer>
+  <div class="modal modal--program" data-modal="product">
+  <div class="modal__container" role="dialog" aria-modal="true">
+    <button class="modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="modal__content slider">
+      <div class="swiper program-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-index="1">
+            <div class="program-slider__card">
+              <div class="program-slider__left">
+                <div class="program-slider__img">
+                  <img src="./images/individual-program/1.png" loading="lazy" alt="Фото программы восток 1" width="293" height="263">
+                </div>
+                <button class="program-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="program-slider__content">
+                <div class="program-slider__top">
+                  <span class="program-slider__title">
+                    Восток 1
+                  </span>
+                  <div class="program-slider__rate">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                  </div>
+                </div>
+                <div class="program-slider__info">
+                  <span class="program-slider__crew">
+                    Состав экипажа: 8 человек
+                  </span>
+                  <div class="program-slider__age">
+                    До 4-х детей и до 4-х взрослых
+                  </div>
+                </div>
+                <div class="program-slider__inner">
+                  <p class="program-slider__free program-slider__free--coffe">
+                    Чай/кофе бесплатно :)
+                  </p>
+                </div>
+                <ul class="program-slider__list">
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 14 шоу-программ на выбор
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 30 минут космическое путешествие
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 60 мин. космический аниматор с активной игровой программой
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Подарок имениннику
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Аренда центра - 300 кв.м.
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Розыгрыш призов— Фотосессия
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" data-index="2">
+            <div class="program-slider__card">
+              <div class="program-slider__left">
+                <div class="program-slider__img">
+                  <img src="./images/individual-program/2.png" loading="lazy" alt="Фото программы союз 2" width="293" height="263">
+                </div>
+                <button class="program-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="program-slider__content">
+                <div class="program-slider__top">
+                  <span class="program-slider__title">
+                    Союз 2
+                  </span>
+                  <div class="program-slider__rate">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                  </div>
+                </div>
+                <div class="program-slider__info">
+                  <span class="program-slider__crew">
+                    Состав экипажа: 15 человек
+                  </span>
+                  <div class="program-slider__age">
+                    До 7 детей и до 8 взрослых
+                  </div>
+                </div>
+                <div class="program-slider__inner">
+                  <p class="program-slider__free program-slider__free--coffe">
+                    Чай/кофе бесплатно :)
+                  </p>
+                </div>
+                <ul class="program-slider__list">
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 14 шоу-программ на выбор
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 30 минут космическое путешествие
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 60 мин. космический аниматор с активной игровой программой
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Подарок имениннику
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Аренда центра - 300 кв.м.
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Розыгрыш призов— Фотосессия
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" data-index="3">
+            <div class="program-slider__card">
+              <div class="program-slider__left">
+                <div class="program-slider__img">
+                  <img src="./images/individual-program/3.png" loading="lazy" alt="Фото программы мкс 3" width="293" height="263">
+                </div>
+                <button class="program-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="program-slider__content">
+                <div class="program-slider__top">
+                  <span class="program-slider__title">
+                    МКС 3
+                  </span>
+                  <div class="program-slider__rate">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                    <img class="program-slider__star" loading="lazy" src="./images/icons/star.svg" aria-hidden="true" alt="" width="20" height="20">
+                  </div>
+                </div>
+                <div class="program-slider__info">
+                  <span class="program-slider__crew">
+                    Состав экипажа: 15 человек
+                  </span>
+                  <div class="program-slider__age">
+                    До 7 детей и до 8 взрослых
+                  </div>
+                </div>
+                <div class="program-slider__inner">
+                  <p class="program-slider__free program-slider__free--coffe">
+                    Чай/кофе бесплатно :)
+                  </p>
+                  <p class="program-slider__free program-slider__free--tea">
+                    Тематическая сервировка стола
+                  </p>
+                </div>
+                <ul class="program-slider__list">
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 14 шоу-программ на выбор
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 30 минут космическое путешествие
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — 60 мин. космический аниматор с активной игровой программой
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Подарок имениннику
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Аренда центра - 300 кв.м.
+                    </p>
+                  </li>
+                  <li class="program-slider__item">
+                    <p class="program-slider__text">
+                      — Розыгрыш призов— Фотосессия
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev program-slider__btn--prev"></div>
+      <div class="swiper-button-next program-slider__btn--next"></div>
+    </div>
+  </div>
+</div>
+  <div class="modal modal--program" data-modal="gallery">
+  <div class="modal__container" role="dialog" aria-modal="true">
+    <button class="modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="modal__content slider">
+      <div class="swiper gallery-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/0.jpg" loading="lazy" alt="Фото cтранствие с веселым дракончиком Вудиком" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Невероятные приключения Дракоши Вудика
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Мультфильм (астрономия)
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      23 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Отправьтесь в удивительное странствие с веселым Дракончиком Вудиком, который путешествует по Вселенной в поисках фантастических приключений. В этот раз Дракончик попадает на Землю, где встречает находчивую девочку Аленку. Вместе Вудик и Аленка познакомят маленьких зрителей с самым интересным о нашей планете и расскажут детям о Солнечной системе. Наш фильм перенесет вас в фантастический и безграничный мир звезд с яркими туманностями и галактиками, звездными скоплениями и удивительными кометами! Окунитесь в увлекательные истории вместе с любознательным Дракончиком Вудиком и узнайте, какое место мы занимаем в большой-большой Вселенной!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/2.jpg" loading="lazy" alt="Фото программы" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Удивительная Планета
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Естествознание
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      23 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Удивительная Планета» – интерактивный фильм для цифровых планетариев с неимоверными трехмерными спецэффектами. Благодаря уникальному формату кино вы ощутите эффект присутствия и станете участником увлекательного путешествия.
+                  Вы увидите планету из космоса, пролетите над материками и океанами, станете свидетелями событий, которые произошли на Земле миллионы лет назад, в эпоху динозавров. Погрузитесь в глубочайшие впадины и покорите вершины.
+                  Испытаете ощущения, недоступные Вам в реальной жизни, побывав в самых интересных и загадочных уголках планеты, вы никогда не забудете этого путешествия!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/5.jpg" loading="lazy" alt="Фото программы" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Сокровища вселенной
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      22 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Звезды, туманности, галактики, планеты... Какая она - жизнь в бесконечных звездных далях? Вселенная полна загадок и вопросов. Но есть возможность приоткрыть завесу этих тайн.
+                  Вместе с самым мощным телескопом вас ждет погружение в мир галактик, туманностей и звездных скоплений. Невиданные ранее сокровища Вселенной, фантастические пейзажи из звездной пыли и облаков, откроют вам всю красоту и величие Мироздания.
+                  Технологии сферического кино помогут погрузиться в атмосферу невесомости, расширить границы своего сознания и вместе с нами совершить путешествие сквозь время и пространство.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/6.jpg" loading="lazy" alt="Фото сокровища Вселенной" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Угроза из космоса
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      22 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Иногда нам кажется, что в небесах царит идиллия. Но это совсем не так. Вселенная таит в себе много опасностей: на нашу планету могут упасть огромные астероиды или кометы, вблизи Земли может вспыхнуть сверхновая звезда или появиться блуждающая чёрная дыра.
+                  Насколько высока вероятность таких событий? Какие катастрофы происходили в прошлом Земли и что нас ожидает в будущем? Всё это вы узнаете, посмотрев наш новый полнокупольный фильм «Угроза из космоса».
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/1.jpg" loading="lazy" alt="Фото программы угроза из космоса" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Розетта
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      25 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Общество Сферического Кино и студия Fisheye Vision совместно с Киевским Планетарием и Центром Атмасфера360 с гордостью представляют полнокупольный фильм, посвященный новейшим научным открытиям и уникальной космической миссии к ядру кометы 67Р Чурюмова-Герасименко.
+                  Присоединяйтесь к первооткрывателю кометы – известному астроному Климу Чурюмову, в истории об истоках возникновения Солнечной Системы и жизни на нашей планете! С какими трудностями столкнулся космический аппарат "Розетта" и спускаемый модуль "Филы" на своем пути длиной 10 лет? Станьте первыми, кто окажется на поверхности далекой кометы!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/8.jpg" loading="lazy" alt="Фото программы Розетта" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Созвездия
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      45 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Как наглядно и интересно рассказать ребенку о созвездиях, о том, как найти их на небе, и какие интересные объекты далекого космоса в них скрыты? Что такое звездная величина, блеск и светимость звезд? Как показать на небе двойные и кратные звездные системы, красные гиганты и туманности, звездные скопления и галактики?
+                  Проект «Созвездия» – это первая программа для цифровых планетариев, созданная в России в сверхвысоком разрешении 4К. Для достоверной визуализации окружающего звездного пространства, на основе научных данных была построена трехмерная структура звездного неба, насчитывающая более 130 тысяч звезд, расположенных точно на своих местах. Также были воссозданы десятки уникальных астрономических объектов.
+                  Мы приглашаем вас в захватывающее и восхитительное путешествие в глубины Вселенной. Станьте на шаг ближе к пониманию загадок космоса!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/7.jpg" loading="lazy" alt="Фото программы Созвездия" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Возвращение на луну навсегда
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      25 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  Этот образовательный фильм для цифровых планетариев повествует о международных командах, соревнующихся за самую большую поощрительную премию в истории, в попытке впервые за более чем 40 лет посадить на Луну управляемый луноход.
+                  Чтобы получить Лунную Премию компании Google и Фонда XPRIZE, команда должна посадить на Луну аппарат, который затем преодолеет 500 метров по поверхности Луны и отправит на Землю видео, фотографии и информацию.
+                  Вы увидите инженерные изобретения и инновационные шаги, предпринятые международными командами в попытке посадить космический аппарат на Луну и побороться за дополнительные призы. В центре вашего внимания окажется дух соревнования и сотрудничества, когда команды примут этот смелый вызов.
+                  Кто выиграет премию Лунную Премию в 30 миллионов долларов? Зрители увидят успешный запуск аппарата, посадку и путешествие по Лунной поверхности. Фильм заканчивается взглядом на потрясающую перспективу нашего будущего на Луне.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/4.jpg" loading="lazy" alt="Фото программы" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Удивительное путешесвтие по солнечной системе
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      28 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  На протяжении тысячелетий, люди с восхищением смотрели на звездное небо! Звезды манили и будоражили воображение. Есть ли жизнь на Марсе? Почему Венера – самая горячая планета? Что происходит на окраинах Солнечной системы?
+                  Чем дальше мы погружаемся вглубь космоса, тем больше возникает вопросов и неразгаданных тайн.
+                  Благодаря компьютерной графике мы совершим захватывающую экскурсию во все уголки Солнечной системы. Своими глазами увидим истинную и неповторимую ее красоту.
+                  Фильм основан на данных последних космических исследований.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slider__card">
+              <div class="gallery-slider__left">
+                <div class="gallery-slider__img">
+                  <img src="./images/program/9.jpg" loading="lazy" alt="Фото программы" width="282" height="430">
+                </div>
+                <button class="gallery-slider__btn btn" data-modal="feedback">
+                  Узнать свободные даты
+                </button>
+              </div>
+              <div class="gallery-slider__content">
+                <span class="gallery-slider__title">
+                  Астрономия
+                </span>
+                <div class="gallery-slider__box">
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr">
+                      Жанр
+                    </span>
+                    <span class="gallery-slider__descr">
+                      Астрономия
+                    </span>
+                  </div>
+                  <div class="gallery-slider__inner">
+                    <span class="gallery-slider__descr gallery-slider__descr--weight">
+                      Длительность
+                    </span>
+                    <span class="gallery-slider__descr">
+                      24 минуты
+                    </span>
+                  </div>
+                </div>
+                <p class="gallery-slider__text">
+                  "Астрономия" - это вводная программа которая расскажет об основах науки, о ее зарождении, истории и основных вехах в новом впечатляющем полнокупольном формате. По ходу повествования будут затронуты многие вопросы, такие как расположение звезд на небе, структура созвездий, их расположение, строение Солнечной Системы, история представления человека об ее строении, открытия Галилея и Коперника.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev gallery-slider__btn--prev"></div>
+      <div class="swiper-button-next gallery-slider__btn--next"></div>
+    </div>
+  </div>
+</div>
+  <div class="modal modal--feedback" data-modal="feedback">
+  <div class="modal__container" role="dialog" aria-modal="true">
+    <button class="modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="modal__content">
+      <form class="feedback-form" action="#">
+        <div class="feedback-form__inner">
+          <div class="feedback-form__left">
+            <h3 class="feedback-form__title title">
+              Оставтье заявку и мы вам перезвоним!
+            </h3>
+            <p class="feedback-form__descr">
+              Просто оставтье заявку. Спланируем программу и ответим на все вопросы
+            </p>
+            <div class="feedback-form__box">
+              <div class="feedback-form__inputs">
+                <label class="feedback-form__label">
+                  <span class="sr-only">
+                    Введите ваше имя
+                  </span>
+                  <input class="feedback-form__input" type="text" placeholder="Ваше имя">
+                </label>
+                <label class="feedback-form__label">
+                  <span class="sr-only">
+                    Введите ваш мобильный телефое
+                  </span>
+                  <input class="feedback-form__input" type="tel" placeholder="Номер телефона">
+                </label>
+              </div>
+              <label class="checkbox" for="checkbox-data">
+                <span class="checkbox__box">
+                  <input class="checkbox__input" id="checkbox-data" type="checkbox" checked>
+                  <span class="checkbox__check"></span>
+                </span>
+                <span class="checkbox__text">
+                  Согласие на <a class="feedback-form__link" href="policy.html">обработку персональных данных.</a>
+                </span>
+              </label>
+              <button class="feedback-form__btn btn" type="submit">
+                Отправить
+              </button>
+            </div>
+          </div>
+          <div class="feedback-form__img">
+            <img src="./images/feedback-img.png" loading="lazy" aria-hidden="true" alt="" width="510" height="680">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

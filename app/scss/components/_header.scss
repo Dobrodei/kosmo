@@ -24,7 +24,7 @@
   }
 
   &__left {
-    max-width: 230px;
+    max-width: 240px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -80,14 +80,34 @@
     flex-direction: column;
     margin-left: 20px;
     padding: 10px 20px;
-    background-image: url('../images/icons/border-decor.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    border: 2px solid $color-white;
+    border-radius: 8px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 2px;
+      height: 50%;
+      background-color: $color-white;
+      border-radius: 2px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      left: 5px;
+    }
+
+    &::after {
+      right: 5px;
+    }
 
     @include small-tablet {
       padding: 10px 20px;
       align-items: center;
+      margin-left: 0;
     }
   }
 
@@ -95,6 +115,11 @@
     font-weight: 600;
     font-size: 18px;
     color: $color-white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #8DA4EA;
+    }
 
     @include small-tablet {
       font-size: 25px;
@@ -163,6 +188,11 @@
     font-weight: 400;
     font-size: 18px;
     color: $color-white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #8DA4EA;
+    }
 
     @include tablet {
       font-size: 16px;

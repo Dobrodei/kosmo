@@ -7,10 +7,10 @@ body {
   overflow-x: hidden;
   background-color: #3F0264;
   color: $color-white;
-  background-image: url('../images/bg-body.png');
-  background-size: сontain;
-  background-repeat: no-repeat;
-  background-position: top 100vh center;
+  // background-image: url('../images/bg-body.png');
+  // background-size: сontain;
+  // background-repeat: no-repeat;
+  // background-position: top 100vh center;
 }
 
 .body--hidden {
@@ -137,6 +137,7 @@ body {
     height: 50px;
     border-radius: 50%;
     border: 3px solid $color-white;
+    margin-top: 0;
 
     @include tablet {
       width: 35px;

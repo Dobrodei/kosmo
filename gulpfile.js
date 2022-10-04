@@ -64,7 +64,7 @@ function htmlInclude() {
 function scripts() {
   return src([
       'node_modules/inputmask/dist/inputmask.js',
-      // 'node_modules/aos/dist/aos.js',
+      'node_modules/aos/dist/aos.js',
       'node_modules/swiper/swiper-bundle.js',
       'app/js/main.js'
     ])
@@ -81,7 +81,7 @@ function images() {
         interlaced: true
       }),
       imagemin.mozjpeg({
-        quality: 92,
+        quality: 80,
         progressive: true
       }),
       imagemin.optipng({
