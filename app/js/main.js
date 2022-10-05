@@ -154,7 +154,6 @@ let generateUrl = function (id) {
   return 'https://www.youtube.com/embed/' + id + query;
 };
 
-// creating iframe
 let createIframe = function (id) {
   let iframe = document.createElement('iframe');
 
@@ -165,7 +164,6 @@ let createIframe = function (id) {
   return iframe;
 };
 
-// main code
 videos.forEach((el) => {
   let videoHref = el.getAttribute('data-video');
 
@@ -189,7 +187,6 @@ videos.forEach((el) => {
     });
   }
 });
-
 
 const headerTop = header.offsetTop;
 window.addEventListener('scroll', function () {
